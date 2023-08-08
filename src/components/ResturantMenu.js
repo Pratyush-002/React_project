@@ -1,6 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const ResturantMenu = () => {
+    const [ resMenuData, setResMenuData ] = useState([])
+
 
    useEffect( () => {
     fetchMenu();
@@ -13,15 +15,20 @@ const ResturantMenu = () => {
             );
         const json = await menuData.json();
 
-    console.log(json);
-    console.log("Hello")
+        setResMenuData(json?.data);
+
+    console.log(json); 
     };
+    const {name, cuisines, areaName, costForTwoMessage, totalRatingsString} = resMenuData?.cards[0]?.card?.card?.info
 
     return(
-        <div>
+        <div className="menu">
             <h1>
-                ResturantMenu
+                {name}
             </h1>
+            <h3>{cuisines.join(", ")}</h3>
+            <h3>{areaName}</h3>
+            <p>{costForTwoMessage} - {totalRatingsString}</p>
             <h2>
                 MENU
             </h2>
@@ -29,7 +36,7 @@ const ResturantMenu = () => {
                 <li>Fries</li>
                 <li>Biryani</li>
                 <li>Soft</li>
-                <li>Chaaps</li>
+                <li>Cudvofjaj</li>
                 
             </ul>
         </div>
