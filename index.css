@@ -1,0 +1,64 @@
+.header{
+    display: flex;
+    justify-content:space-between; 
+    border: 2px solid black;
+}
+.logo{
+    width: 120px;
+    padding-left: 10px;
+}
+.list-items{
+    display: flex;
+    list-style-type: none;
+    font-size: 18px;
+    padding-right: 10px;
+    padding-left: 0px;
+    align-items: center;
+}
+.list-items > li {
+    padding: 10px;
+    margin: 10px;
+}
+#link-decoration{
+    text-decoration: none;
+}
+.res-card{
+    width: 250px;
+    padding: 5px;
+    margin: 10px;
+}
+.res-card:hover{
+    cursor: pointer;
+    border: 2px solid black;
+}
+.res-img{
+    width: 100%;
+}
+
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    justify-content: space-evenly;
+}
+.rating{
+    padding: 10px;
+    
+}
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    justify-content: space-evenly;
+}
+.shimmer-box{
+    width: 250px;
+    height: 400px;
+    margin: 10px;
+    background-color: lightgray;
+}
+.login-btn{
+    height: 30px;
+    width: 60px;
+    cursor: pointer;
+}
