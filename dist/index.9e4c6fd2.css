@@ -1,0 +1,76 @@
+.header {
+  border: 2px solid #000;
+  justify-content: space-between;
+  display: flex;
+}
+
+.logo {
+  width: 120px;
+  padding-left: 10px;
+}
+
+.list-items {
+  align-items: center;
+  padding-left: 0;
+  padding-right: 10px;
+  font-size: 18px;
+  list-style-type: none;
+  display: flex;
+}
+
+.list-items > li {
+  margin: 10px;
+  padding: 10px;
+}
+
+#link-decoration {
+  text-decoration: none;
+}
+
+.res-card {
+  width: 250px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.res-card:hover {
+  cursor: pointer;
+  border: 2px solid #000;
+}
+
+.res-img {
+  width: 100%;
+}
+
+.res-container {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 5px;
+  display: flex;
+}
+
+.rating {
+  padding: 10px;
+}
+
+.shimmer-container {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 5px;
+  display: flex;
+}
+
+.shimmer-box {
+  background-color: #d3d3d3;
+  width: 250px;
+  height: 400px;
+  margin: 10px;
+}
+
+.login-btn {
+  cursor: pointer;
+  width: 60px;
+  height: 30px;
+}
+
+/*# sourceMappingURL=index.9e4c6fd2.css.map */
