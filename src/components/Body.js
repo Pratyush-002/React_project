@@ -1,6 +1,9 @@
 import ResturantCard from "./ResturantCards";
 import { useState , useEffect } from "react";
 import Shimmer from "./Shimmer_ui";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 
 const Body = () =>{
@@ -29,9 +32,9 @@ const Body = () =>{
         setFilteredListOfRes(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
     
-  
-    return resturantData.length === 0 ? 
-    (<Shimmer />) : (
+    return resturantData.length === 0 ?(
+    <Shimmer />
+    ) : (
         <div className="body">
         <div className="rating">
 
@@ -52,23 +55,24 @@ const Body = () =>{
                 );
 
                 setFilteredListOfRes(filteredSearch);
-            }}>Sreach</button>
+            }}>Search</button>
 
             <button className="rating-btn" 
              onClick={()=>{
                const filteredList = resturantData.filter(
-                (res) =>  res.info.avgRating > 4 );
-                setFilteredListOfRes(filteredList);   
+                (res) =>  res.info.avgRating > 4 )
+                setFilteredListOfRes(filteredList);  
                 }
             }
-                > 
-                 Top Rated Resturant
+                > Rating 4.0
+                 <FontAwesomeIcon icon={faStar} bounce size="xs" style={{color: "#0a0a0a",marginLeft:"5px"}} />
                 </button> 
         </div>
         <div className="res-container">
             {
-            resturantData.map((restaurant) => (
-            <ResturantCard key={restaurant.info.id} resData={restaurant} />)
+            filterListOfRes.map((restaurant) => (
+            <Link key={restaurant.info.id} to={"/resturants/"+restaurant.info.id}><ResturantCard key={restaurant.info.id} resData={restaurant} /></Link>)
+            
         )};
         </div>
         </div>

@@ -1,12 +1,18 @@
 .header {
-  border: 2px solid #000;
   justify-content: space-between;
+  align-items: center;
   display: flex;
+  box-shadow: 0 5px 3.5px #d7d7d7;
 }
 
 .logo {
   width: 120px;
   padding-left: 10px;
+  transition: transform .4s;
+}
+
+.logo:hover {
+  transform: scale(1.2);
 }
 
 .list-items {
@@ -28,14 +34,16 @@
 }
 
 .res-card {
+  background-color: #f5f5f5;
   width: 250px;
   margin: 10px;
   padding: 5px;
+  box-shadow: 0 5px 3.5px #d7d7d7;
 }
 
 .res-card:hover {
   cursor: pointer;
-  border: 2px solid #000;
+  border: 1px solid #d7d7d7;
 }
 
 .res-img {
@@ -50,7 +58,10 @@
 }
 
 .rating {
-  padding: 10px;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 10px 10px;
+  display: flex;
 }
 
 .shimmer-container {
@@ -69,8 +80,48 @@
 
 .login-btn {
   cursor: pointer;
+  color: #fff;
+  background-color: #376fd8;
+  border: none;
+  border-radius: 10px;
   width: 60px;
   height: 30px;
+}
+
+.login-btn:hover {
+  background-color: #5981cd;
+}
+
+.search-box {
+  border: 1.5px solid #376fd8;
+  border-radius: 20px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.search-btn {
+  color: #fff;
+  background-color: #376fd8;
+  border: none;
+  border-radius: 15px;
+  width: 60px;
+  height: 32px;
+  margin-right: 30px;
+  padding: 6px;
+}
+
+.search-btn:hover {
+  background-color: #5981cd;
+}
+
+.rating-btn {
+  color: #000;
+  background-color: #fff;
+  border-width: 1px;
+  border-color: #868484;
+  border-radius: 16px;
+  width: 100px;
+  height: 32px;
 }
 
 /*# sourceMappingURL=index.9e4c6fd2.css.map */

@@ -2,13 +2,14 @@ import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+
 const Header = () =>{
 
     const [ loginBtn , setloginBtn] = useState("login")
     return(
         <div className="header">
             <div className="logo-container">
-                <img className="logo" src={LOGO_URL}></img>
+              <Link to={"/"}>  <img className="logo" src={LOGO_URL}></img> </Link>
             </div>
             <div className="list">
                 <ul className="list-items">
