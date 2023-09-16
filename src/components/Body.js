@@ -36,10 +36,11 @@ const Body = () =>{
     <Shimmer />
     ) : (
         <div className="body">
-        <div className="rating">
+        <div className="flex justify-end items-center p-2 m-2">
 
             <input 
-            className="search-box" 
+            className="px-2 mx-2 bg-white border shadow-lg block rounded-md" 
+            placeholder="Search Resturant"
             type="text" 
             value={searchText} 
             onChange={(e)=>{
@@ -47,17 +48,15 @@ const Body = () =>{
             }}/>
            
 
-            <button className="search-btn" onClick={()=>{
-
+            <button className="px-3 py-1 mx-2 text-center rounded-full  bg-yellow-200  hover:bg-yellow-400 hover:text-white shadow-sm" 
+            onClick={()=>{
                 const filteredSearch = resturantData.filter(
                     (res) => res.info.name.toLowerCase().includes(searchText.toLowerCase())
-                    
                 );
-
                 setFilteredListOfRes(filteredSearch);
             }}>Search</button>
 
-            <button className="rating-btn" 
+            <button className="px-3 py-1 mx-2 text-center rounded-full bg-yellow-200  hover:bg-yellow-400 hover:text-white" 
              onClick={()=>{
                const filteredList = resturantData.filter(
                 (res) =>  res.info.avgRating > 4 )
@@ -68,7 +67,8 @@ const Body = () =>{
                  <FontAwesomeIcon icon={faStar} bounce size="xs" style={{color: "#0a0a0a",marginLeft:"5px"}} />
                 </button> 
         </div>
-        <div className="res-container">
+
+        <div className="flex flex-wrap items-start justify-evenly">
             {
             filterListOfRes.map((restaurant) => (
             <Link key={restaurant.info.id} to={"/resturants/"+restaurant.info.id}><ResturantCard key={restaurant.info.id} resData={restaurant} /></Link>)

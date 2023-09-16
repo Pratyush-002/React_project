@@ -20,7 +20,9 @@
   "homepage": "https://github.com/Pratyush-002/React_project#readme",
   "devDependencies": {
     "parcel": "^2.9.3",
-    "process": "^0.11.10"
+    "postcss": "^8.4.29",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.3.3"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",

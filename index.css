@@ -1,7 +1,12 @@
-.header{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* .header{
     display: flex;
     justify-content:space-between; 
-    /* border: 2px solid white; */
+  
     align-items: center;
     box-shadow: 0px 5px 3.5px rgb(215, 215, 215);
 }
@@ -29,11 +34,13 @@
     text-decoration: none;
 }
 .res-card{
+    background-color: whitesmoke;
+}
+.res-card{
     width: 250px;
     padding: 5px;
-    margin: 10px;
-    background-color: whitesmoke;    
-    box-shadow: 0px 5px 3.5px rgb(215, 215, 215);
+    margin: 10px;   
+    box-shadow: 5px 5px 3.5px rgb(215, 215, 215);
 }
 .res-card:hover{
     cursor: pointer;
@@ -111,4 +118,4 @@
     background-color: white;
     border-width: 1px;
     border-color: rgb(134, 132, 132);
-}
+} */
