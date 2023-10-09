@@ -16,4 +16,15 @@ const ResturantCard = (props) =>{
     )
 }
 
+export const UpdatedResCard = () =>{
+    return (props) => {
+        return (
+            <div>
+                <label className="absolute">🟢</label>
+                <ResturantCard {...props} />
+            </div>
+        )
+    }
+}
+
 export default ResturantCard;

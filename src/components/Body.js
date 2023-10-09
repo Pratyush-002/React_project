@@ -1,9 +1,10 @@
-import ResturantCard from "./ResturantCards";
+import ResturantCard, { UpdatedResCard } from "./ResturantCards";
 import { useState , useEffect } from "react";
 import Shimmer from "./Shimmer_ui";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { UpdatedResCard } from "./ResturantCards";
 
 
 const Body = () =>{
@@ -12,6 +13,9 @@ const Body = () =>{
     const [ filterListOfRes , setFilteredListOfRes ] = useState([])
 
     const [ searchText , setsearchText ] = useState("")
+
+
+    const ResturantCardPrometed = UpdatedResCard(ResturantCard);
 
 
 
@@ -69,11 +73,18 @@ const Body = () =>{
         </div>
 
         <div className="flex flex-wrap items-start justify-evenly">
-            {
-            filterListOfRes.map((restaurant) => (
-            <Link key={restaurant.info.id} to={"/resturants/"+restaurant.info.id}><ResturantCard key={restaurant.info.id} resData={restaurant} /></Link>)
+            {filterListOfRes.map((restaurant) => (
+            <Link key={restaurant.info.id} to={"/resturants/"+restaurant?.info.id}>
+                {restaurant.info.veg ? 
+                (<ResturantCardPrometed resData={restaurant} />
+                ):(
+                    <ResturantCard resData={restaurant} />
+                )}
+                </Link>
+                )
             
-        )};
+        )
+        };
         </div>
         </div>
     )

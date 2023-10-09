@@ -1,18 +1,21 @@
 import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 
 const Header = () =>{
 
-    const [ loginBtn , setloginBtn] = useState("login")
+    const [ loginBtn , setloginBtn] = useState("Login")
+
+    const cartItems = useSelector ((store) => store.cart.items);
     return(
 
         <div className="flex justify-evenly shadow-lg bg-yellow-200 m-[10px_20px] rounded-full">
 
             <div className="bg-inherit w-24 ">
               <Link to={"/"}>  
-              <img className="rounded-full relative right-20" src={LOGO_URL}></img>
+              <img className="rounded-full relative right-72" src={LOGO_URL}></img>
                </Link>
             </div>
 
@@ -24,7 +27,7 @@ const Header = () =>{
                         <Link to="/about" id="link-decoration">About Us</Link>
                         </li>
                     <li className="px-3"><Link to="/contact" id="link-decoration">Contact Us</Link></li>
-                    <li className="px-3">Cart</li>
+                    <li className="px-3"><Link to="/cart" id="link-decoration">Cart{cartItems.length}</Link></li>
 
                     <button className="text-center rounded-full bg-white  hover:bg-white hover:text-yellow-500 h-8 w-16" 
                          onClick={()=>{
